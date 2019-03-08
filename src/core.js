@@ -233,6 +233,7 @@ async function pruneNonCriticalCssLauncher ({
   width,
   height,
   forceInclude,
+  forceExclude,
   strict,
   userAgent,
   renderWaitTime,
@@ -358,7 +359,8 @@ async function pruneNonCriticalCssLauncher ({
     debuglog('turn css to formatted selectorlist START')
     const buildSelectorProfilePromise = buildSelectorProfile(
       ast,
-      forceInclude
+      forceInclude,
+      forceExclude
     ).then(res => {
       debuglog('turn css to formatted selectorlist DONE')
       return res
